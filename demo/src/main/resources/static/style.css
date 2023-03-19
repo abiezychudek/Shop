@@ -1,0 +1,151 @@
+body {
+ margin : 0;
+}
+h2 {
+color: red;
+}
+
+header {
+background-color: pink;
+color: beige;
+padding: 5px;
+display: flex;
+justify-content: space-between;
+}
+
+.header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #555;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 100px;
+    left: 10px;
+    background-color: pink;
+color: beige;
+padding: 5px;
+display: flex;
+justify-content: space-between;
+  }
+.title{
+    font-size: 5rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 20px;
+    font-weight: bold;
+
+}
+
+.main-content {
+    background-color: rgb(230, 230, 230);
+    margin: auto;
+    margin-top: 30px;
+    width: 75%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item{
+    background-color: cadetblue;
+    width: 300px;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.item-name{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5 px;
+    width: 100%;
+    margin-bottom: 0;
+}
+.item img{
+    width: 75%;
+    height: auto;
+    margin-top: 10px;
+}
+.button-ADD{
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    width: 70%;
+    padding: 3px;
+}
+
+.button-ADD:hover{
+    background-color: rgb(84, 67, 67);
+}
+
+.cart-icon{
+    background-color: blue;
+    text-decoration: none;
+}
+
+
+.cart-ico:hover{
+    color: brown;
+}
+
+table, tr {
+    width: 80%;
+    border: 1px solid black;
+}
+
+th{
+    text-align: left;
+    border: 1px solid black;;
+}
+
+td img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.mbtn{
+    background-color: blanchedalmond;
+    text-decoration: none;
+    display: block;
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 5px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+td p{
+    margin: 3px;
+    padding: 5px
+}
+
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label{
+    width: 100%;
+}
+
+.infoMsg{
+    width: 100%;
+    color: green;
+    font-size: 1.3rem;
+    text-align: center;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ABiezychudek</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<header>
+    <span class="title">
+        ABiezychudek
+    </span>
+</header>
+<div class="main-content">
+
+    <h1>Delete Item</h1>
+        <div
+                class="item" th:each="item : ${items}">
+
+            <img th:src="@{${item.image}}">
+            <p class="item-name" th:text="${item.name}"> </p>
+            <div>
+                <span>Price</span>
+
+                <span th:text="${item.price}"> </span>
+                <span>$</span>
+            </div>
+            <a th:href="@{'/deleteItem/' + ${item.id}}" class="button-ADD">Delete</a>
+        </div>
+
+</div>
+</main>
+</body>
+</html>

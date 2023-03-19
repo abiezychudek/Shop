@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ABiezychudek</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<header>
+    <span class="title">
+        ABiezychudek
+    </span>
+</header>
+<div class="main-content">
+
+    <h1>Add Item</h1>
+    <form th:action="@{/addItem}" method="post">
+            <label>NAME</label>
+            <input type="text" name="name" required>
+            <label>PRICE</label>
+            <input type="number" min="0.01" step="1.00" name="price" required>
+            <label>IMAGE</label>
+            <input type="text" name="image" required>
+            <label>PRICE</label>
+            <input type="QUANTITY" min="1.00" step="1.00" name="quantity_of_goods" required>
+            <button type="submit">Add Item</button>
+
+    </form>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="ShopHeader">
+  <span class="title">Abiezychudek</span>
+
+  <a th:href="@{/order/cart}" class="cart-ico">
+    <div>
+      <span>Koszyk (</span>
+      <span th:text="${@cart.counter}"></span>
+      <span>)</span>
+      <span th:text="${@cart.sum}"></span>
+      <span>zł</span>
+    </div>
+  </a>
+</header>
+</body>
+</html>
