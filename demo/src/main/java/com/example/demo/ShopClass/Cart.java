@@ -2,6 +2,7 @@ package com.example.demo.ShopClass;
 
 import com.example.demo.ShopClass.CartItem;
 import com.example.demo.model.Item;
+import com.example.demo.repository.ItemRepository;
 import lombok.Data;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -17,11 +18,13 @@ public class Cart {
     public List<CartItem> cartItems;
     public BigDecimal sum;
     public int counter;
+    private final ItemRepository itemRepository;
 
-    public Cart() {
+    public Cart(ItemRepository itemRepository) {
         cartItems = new ArrayList<>();
         sum = BigDecimal.ZERO;
         counter = 0;
+        this.itemRepository = itemRepository;
     }
 
     public void add(Item item) {
@@ -72,6 +75,20 @@ public class Cart {
             }
         }
         cartItems.removeIf(i -> i.samId(item));
+    }
+    public void clean(){
+        for(CartItem cart: cartItems){
+            Item item=cart.item;
+            int amount=item.getQuantity_of_goods()-cart.counter;
+            item.setQuantity_of_goods(amount);
+            if(item.getQuantity_of_goods()==0){
+                itemRepository.delete(item);
+            }
+            itemRepository.save(item);
+        }
+        cartItems.clear();
+        counter=0;
+        sum=BigDecimal.ZERO;
     }
 
 }

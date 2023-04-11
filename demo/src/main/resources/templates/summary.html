@@ -12,13 +12,13 @@
                 <tr th:each="cartItem : ${@cart.cartItems}">
                     <td>1</td>
                     <td>
-                        <img th:src="@{${cartItem.item.imgUrl}}">
+                        <img th:src="@{${cartItem.item.image}}">
                     </td>
                     <td th:text="${cartItem.item.name}"></td>
                     <td style="display: flex; padding-top: 10px">
                         <p th:text="${cartItem.counter}"></p>
                     </td>
-                    <td th:text="${cartItem.price}"></td>
+                    <td th:text="${cartItem.sum}"></td>
                 </tr>
             </table>
 
@@ -29,17 +29,13 @@
         <div class="summary">
 
             <form th:action="@{/order/saveorder}" method="post">
-                <label>Imię</label>
-                <input type="text" name="firstName" required>
-                <label>Nazwisko</label>
-                <input type="text" name="lastName" required>
-                <label>Address</label>
-                <input type="text" name="address" required>
-                <label>kod pocztowy</label>
-                <input type="text" name="postCode" required>
+                <label>Imię Nazwisko</label>
+                <input type="text" name="FullName" required>
                 <label>Miasto</label>
                 <input type="text" name="city" required>
-                <button type="submit" class="add-btn">Zamów</button>
+                <label>kod pocztowy</label>
+                <input type="text" name="post_code" required>
+                <button type="submit">Zamów</button>
             </form>
         </div>
     </div>
