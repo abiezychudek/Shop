@@ -22,11 +22,12 @@ public class Item {
     private BigDecimal price;
     private String name;
     private String image;
-      private int quantity_of_goods;
-    public Item(BigDecimal price, String name, String image,int quantity_of_goods) {
+    private int quantity_of_goods;
+
+    public Item(BigDecimal price, String name, String image, int quantity_of_goods) {
         this.price = price;
         this.name = name;
         this.image = image;
-   //     this.quantity_of_goods=quantity_of_goods;
+        this.quantity_of_goods = quantity_of_goods;
     }
 }

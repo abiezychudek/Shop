@@ -29,16 +29,24 @@ public class Cart {
         for (CartItem cart : cartItems) {
             if (cart.samId(item)) {
                 isAlready = true;
-                cart.increaseCounter();
+                if(item.getQuantity_of_goods()>cart.counter){
+                    cart.increaseCounter();
+                    counter++;
+                    sum = sum.add(item.getPrice());
+                }else {
+                    System.out.println("Wyczerpales nasz magazyn!");
+                }
                 break;
             }
         }
 
         if (!isAlready) {
-            cartItems.add(new CartItem(item));}
+            cartItems.add(new CartItem(item));
+            counter++;
+            sum = sum.add(item.getPrice());
+        }
 
-        counter++;
-        sum = sum.add(item.getPrice());
+
     }
 
     public void remove(Item item) {
@@ -60,7 +68,7 @@ public class Cart {
             if (cart.samId(item)) {
                 sum = sum.subtract(cart.getSum());
                 counter-=cart.counter;
-    //            cart.decreaseCounter();
+                cart.deleteCounter();
             }
         }
         cartItems.removeIf(i -> i.samId(item));
