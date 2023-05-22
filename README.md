@@ -19,4 +19,5 @@ Once they have all the items of interest in their cart, they can proceed to chec
  1. Java
  2. Spring: Spring Web, Spring Data JPA, H2 Database, Thymeleaf, Lombok
  3. HTML
- 4.  CSS
+ 4. CSS
+ 5. Mockito
